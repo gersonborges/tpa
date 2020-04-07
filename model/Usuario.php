@@ -39,6 +39,19 @@ class Usuario
 
 
     }
+    
+     public function create()
+    {
+        $sql = $this->con->prepare("INSERT INTO usuario (email, nome) VALUES (?,?)");
+        $sql->execute([$this->email, $this->nome]);
+
+        if ( $sql->errorCode()=='00000'){
+            header("Location: ./");
+        }else{
+            echo "<div class='alert alert-danger'>".$sql->errorInfo()[2]."</div>";
+        }
+
+    }
 
     /**
      * @return null
