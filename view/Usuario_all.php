@@ -1,3 +1,5 @@
+<a class="btn btn-primary" href="./?classe=Usuario&acao=create">Novo</a>
+
 <table>
 
     <thead>
@@ -6,6 +8,7 @@
             <td>ID</td>
             <td>EMAIL</td>
             <td>SENHA</td>
+            <th>AÇÕES</th>
         </tr>
 
     </thead>
@@ -18,6 +21,7 @@
                 <td> <?= $usuario->id ?> </td>
                 <td> <?= $usuario->email ?> </td>
                 <td> <?= $usuario->nome ?> </td>
+                <td><a class="btn btn-primary" href="./?classe=Usuario&acao=update&id=<?= $usuario->id ?>">Editar</a> </td>
             </tr>
 
         <?php } ?>
