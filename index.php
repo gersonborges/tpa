@@ -1,10 +1,24 @@
-<?php
+            <?php
+            require_once "inc/config.php";
 
+            // Resolvendo a CLASSE a ser utilizada e a ACAO a ser utilizada
+            if ( isset($_GET['classe']) && isset($_GET['acao']) ){
 
-require_once 'controller/UsuarioController.php';
-$app = new UsuarioController();
-$app->all();
+                // pega os dados via GET para o controlador
+                $controller = $_GET['classe'].'Controller';
+                $acao = $_GET['acao'];
 
+            }else{
 
+                // pega os dados DEFAULT para o controlador
+                $controller = 'UsuarioController';
+                $acao = 'all';
 
-?>
+            }
+
+            // controlador
+            require_once "controller/".$controller.".php";
+            $app = new $controller();
+            $app->$acao();
+
+            ?>
