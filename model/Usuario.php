@@ -52,6 +52,19 @@ class Usuario
         }
 
     }
+    
+    public function update(){
+        
+        $sql= $this->con->prepare("UPDATE usuario SET email=?, nome=? WHERE id=?");
+        $sql->execute([$this->email, $this->nome, $this->id]);
+
+        if ($sql->errorCode() == '00000') {
+            header("Location: ./");
+        } else {
+            echo "<div class='alert alert-danger'>" . $sql->errorInfo()[2] . "</div>";
+        }
+        
+    }
 
     /**
      * @return null
