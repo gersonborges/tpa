@@ -65,6 +65,18 @@ class Usuario
         }
         
     }
+    
+    public function delete(){
+
+        $sql= $this->con->prepare("DELETE FROM usuario WHERE id=?");
+        $sql->execute([$this->id]);
+
+        if ($sql->errorCode() == '00000') {
+            header("Location: ./");
+        } else {
+            echo "<div class='alert alert-danger'>" . $sql->errorInfo()[2] . "</div>";
+        }
+    }
 
     /**
      * @return null
