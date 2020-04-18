@@ -44,6 +44,15 @@ class UsuarioController
         $usuario = $obj->read();
         include "view/Usuario_update.php";
     }
+    
+    public function delete()
+    {
+
+        $obj = new Usuario();
+        $obj->setId($_GET['id']);
+        $usuario = $obj->delete();
+
+    }    
 
 }
 
