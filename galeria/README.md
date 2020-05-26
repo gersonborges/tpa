@@ -6,3 +6,6 @@
 
 ### Template Admin LTE
 https://adminlte.io/
+
+### Exemplo rodando
+http://plixsite.net/tpa/galeria/
