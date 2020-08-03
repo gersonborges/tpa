@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oi mundo</title>
+</head>
+<body>
+
+<h1>Título da página</h1>
+
+<p id="p1">Parágrafo 1 </p>
+
+<p id="p2">Parágrafo 2 </p>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+
+    $(document).ready(function() {
+      $("#cep").blur(function() {
+            var cep = $(this).val();
+            $.getJSON("viacep.com.br/ws/"+ cep +"/json/", function(dados) {
+                if ( !("erro" in dados)) {
+                    $("#rua").val(dados.logradouro);
+                    $("#bairro").val(dados.bairro);
+                    $("#cidade").val(dados.localidade);
+                    $("#uf").val(dados.uf);
+                }
+            });
+        });
+    });
+
+
+</script>
