@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Título</h1>
+
+<p id="botao1">Darth Vade mode</p>
+
+
+
+<p id="botao2">Light mode</p>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+
+    console.log("oi 3b2, aqui é o console");
+
+    $(document).ready(function () {
+
+        $('#botao1').click(function () {
+
+            $('body').css('background-color','#000');
+            $('body').css('color','#fff');
+
+        })
+
+        $('#botao2').click(function () {
+
+            $('body').css('background-color','#fff');
+            $('body').css('color','#000');
+
+        })
+
+
+    })
+
+
+
+
+
+</script>
