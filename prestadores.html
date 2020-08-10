@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+</head>
+<body>
+
+<h1>Título qualquer</h1>
+<div id="meus-dados"></div>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+
+    $("body").click(function () {
+
+        $.getJSON('prestadores.json', function (data) {
+
+            $.each(data, function (index, value) {
+
+                $("#meus-dados").append( value.nome );
+                $("#meus-dados").append( " " );
+                $("#meus-dados").append( value.endereco );
+                $("#meus-dados").append( " " );
+                $("#meus-dados").append( value.data_nascimento );
+                $("#meus-dados").append( "<br>" );
+
+            })
+
+        })
+
+    })
+
+})
+
+</script>
