@@ -1,0 +1,20 @@
+[
+  {
+
+    "id" : 1,
+    "nome" : "Gerson",
+    "endereco" : "Rua Ernani Agricola",
+    "cpf" : "12345678900",
+    "data_nascimento" : "1965-11-09"
+
+  },
+  {
+
+    "id" : 2,
+    "nome" : "Felipe",
+    "endereco" : "Rua Frutal",
+    "cpf" : "987654321000",
+    "data_nascimento" : "1996-02-18"
+
+  }
+]
