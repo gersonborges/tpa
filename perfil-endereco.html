@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Cadastro de endereço</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Perfil :: Endereço</h2>
+    <form>
+
+        <input type="hidden" id="prestador_id" name="prestador_id" value="">
+
+        <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" class="form-control col-2" id="cep" placeholder="CEP" name="cep">
+        </div>
+        <div class="form-group">
+            <label for="logradouro">Rua/Av/Praça</label>
+            <input type="text" class="form-control col-8" id="logradouro" placeholder="Rua/Av/Praça" name="logradouro">
+        </div>
+        <div class="form-group">
+            <label for="numero">Número</label>
+            <input type="text" class="form-control col-2" id="numero" placeholder="Número" name="numero">
+        </div>        <div class="form-group">
+        <label for="complemento">Complemento</label>
+        <input type="text" class="form-control col-6" id="complemento" placeholder="Complemento" name="complemento">
+    </div>
+        <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" class="form-control col-6" id="bairro" placeholder="Bairro" name="bairro">
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input type="text" class="form-control col-6" id="cidade" placeholder="Cidade" name="cidade">
+        </div>
+        <div class="form-group">
+            <label for="uf">Estado</label>
+            <input type="text" class="form-control col-2" id="uf" placeholder="Estado" name="uf">
+        </div>
+
+        <button type="button" class="btn btn-primary">Salvar</button>
+
+    </form>
+</div>
+
+</body>
+</html>
+
+
