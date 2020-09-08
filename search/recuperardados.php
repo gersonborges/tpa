@@ -12,7 +12,8 @@ SELECT
   e.cidade,
   e.uf
 FROM prestador p
-LEFT JOIN endereco e ON p.id=e.prestador_id");
+LEFT JOIN endereco e ON p.id=e.prestador_id
+ORDER BY p.nome");
 $sql->execute();
 $rows = $sql->fetchAll(PDO::FETCH_CLASS);
 
