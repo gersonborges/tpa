@@ -342,19 +342,22 @@
 <script>
     $(function () {
 
-        $("#example1").DataTable({
-            "responsive": true,
-            "autoWidth": false,
-            "ajax": "produtos.php",
-        });
-
-        $.get('produtos.php', function (data) {
+        $.get("produtos.php", function (data) {
             $('#produtos').html(data);
         });
 
-    });
-</script>
+        $.getJSON('../usuario.php', function (data) {
 
+            if( data.id==0 )
+                window.location.href = "../login.html";
+
+            $('#usuario-nome').html(data.nome);
+            $('#usuario-avatar').prop('src', '../img/'+data.avatar);
+        })
+
+    });
+
+</script>
 
 
 
