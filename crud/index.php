@@ -6,4 +6,17 @@ require_once "model/Usuario.php";
 
 $app = new UsuarioController();
 
-$app->create();
+if ( isset($_GET['acao']) ){
+
+    if( $_GET['acao']=='create' ){
+        $app->create();
+    }else if ( $_GET['acao']='update' ){
+        $app->update();
+    } 
+
+}else{
+    $app->all();
+}
+
+
+

@@ -21,20 +21,31 @@ class Usuario{
     public function create(){
         $sql = $this->con->prepare("INSERT INTO usuario (email, nome) VALUES (?,?)");
         $sql->execute([$this->getEmail(), $this->getNome()]);
-        if ($sql->errorCode()!='00000'){
+
+        if($sql->errorCode()!='00000'){
             echo $sql->errorInfo()[2];
-        }
+        }else{
+			header("Location: ./");
+   	 	}
     }
 
-    public function read(){
+	public function read(){
+        $sql = $this->con->prepare("SELECT * FROM usuario WHERE id=?");
+        $sql->execute([$this->getId()]);
+        $row = $sql->fetchObject();
+        return $row;		
+	}
 
-    }
-    public function update(){
+	public function update(){
+		$sql = $this->con->prepare("UPDATE usuario SET email=?, nome=? WHERE id=?");
+		$sql->execute([$this->getEmail(), $this->getNome(), $this->getId()]);
 
-    }
-    public function delete(){
-
-    }   
+		if($sql->errorCode()!='00000'){
+            echo $sql->errorInfo()[2];
+        }else{
+           header("Location: ./");
+		}
+	}
 
 	/**
 	 * Get the value of id

@@ -1,11 +1,12 @@
 <?php
-
 class UsuarioController{
+
 
     public function all(){
         $obj = new Usuario();
-        $obj->all();
-        include "view/usuario_all.php";
+        $usuarios = $obj->all();
+
+        include 'view/usuario_all.php';
     }
 
     public function create(){
@@ -17,17 +18,36 @@ class UsuarioController{
             $obj->create();
         }
 
-        include "view/usuario_create.php";
-
+        include 'view/usuario_create.php';
     }
+
     public function read(){
 
     }
+
     public function update(){
+        if( !isset($_GET['id']) ){
+            echo "Id não informado";
+            exit;
+        }
 
+        $obj = new Usuario();
+
+        $obj->setId($_GET['id']);
+
+        if( isset($_POST['email']) && isset($_POST['nome']) ){
+            $obj->setEmail($_POST['email']);
+            $obj->setNome($_POST['nome']);
+            $obj->update();
+        }
+
+        $usuario = $obj->read();
+
+        include 'view/usuario_update.php';
     }
-    public function delete(){
 
+    public function delete(){
+        
     }
 
 

@@ -15,18 +15,18 @@
 
     <div class="container">
 
-        <h1>Usuário (create)</h1>
+        <h1>Usuário (update)</h1>
 
         <form action="" method="post">
 
             <div class="form-group col-md-4">
                 <label for="email">Email</label>
-                <input class="form-control" type="email" name="email" />
+                <input class="form-control" type="email" name="email" value="<?=$usuario->email?>" />
             </div>
 
             <div class="form-group col-md-4">
                 <label for="nome">Nome</label>
-                <input class="form-control" type="text" name="nome" />
+                <input class="form-control" type="text" name="nome" value="<?=$usuario->nome?>" />
             </div>
 
             <button class="btn btn-primary" type="submit">Salvar</button>
