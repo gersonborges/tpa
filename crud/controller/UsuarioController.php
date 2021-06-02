@@ -47,6 +47,16 @@ class UsuarioController{
     }
 
     public function delete(){
+
+        if( !isset($_GET['id']) ){
+            echo "Id não informado";
+            exit;
+        }
+
+        $obj = new Usuario();
+        $obj->setId($_GET['id']);
+        $obj->delete();
+
         
     }
 

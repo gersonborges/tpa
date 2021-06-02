@@ -10,8 +10,10 @@ if ( isset($_GET['acao']) ){
 
     if( $_GET['acao']=='create' ){
         $app->create();
-    }else if ( $_GET['acao']='update' ){
+    }else if ( $_GET['acao']=='update' ){
         $app->update();
+    }else if ( $_GET['acao']=='delete'){
+        $app->delete();
     } 
 
 }else{

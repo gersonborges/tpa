@@ -47,6 +47,18 @@ class Usuario{
 		}
 	}
 
+	public function delete(){
+		$sql = $this->con->prepare("DELETE FROM usuario WHERE id=?");
+		$sql->execute([$this->getId()]);
+
+		if($sql->errorCode()!='00000'){
+            echo $sql->errorInfo()[2];
+        }else{
+           header("Location: ./");
+		}
+	}
+
+
 	/**
 	 * Get the value of id
 	 *
