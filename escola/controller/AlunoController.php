@@ -2,6 +2,16 @@
 class AlunoController{
 
 
+    public function all(){
+
+        $obj = new Aluno();
+        $alunos = $obj->all();
+
+        include 'view/aluno_all.php';
+
+
+    }
+
     public function create(){
 
         $obj = new Aluno();
