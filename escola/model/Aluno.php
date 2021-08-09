@@ -17,8 +17,8 @@ class Aluno{
 
         $sql = $this->con->prepare("SELECT * FROM aluno");
         $sql->execute();
-        $row = $sql->fetchAll(PDO::FETCH_CLASS);
-        return $row;
+        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+        return $rows;
 
     }
 
